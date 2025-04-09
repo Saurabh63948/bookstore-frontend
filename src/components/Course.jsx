@@ -11,7 +11,8 @@ function Course() {
       
       const getBooks=async()=>{
        try {
-        const res =await axios.get("http://localhost:8000/books")
+        const res = await axios.get("https://bookstore-backend-tcp8.onrender.com/books");
+
         
        setdata(res.data)
        }catch(err){

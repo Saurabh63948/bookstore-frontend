@@ -13,7 +13,8 @@ function Freebook() {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/books");
+        // Replace localhost with the live backend URL
+        const res = await axios.get("https://bookstore-backend-tcp8.onrender.com/books");
         const data = res.data.filter((data) => data.category === "Free");
         setBook(data);
         setLoading(false);

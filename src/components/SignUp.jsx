@@ -33,7 +33,8 @@ function SignUp() {
     };
 
     try {
-      const res = await axios.post("http://localhost:8000/users/signUp", userInfo);
+      const res = await axios.post("https://bookstore-backend-tcp8.onrender.com/users/signUp", userInfo);
+
       console.log(res.data);
 
       login(res.data); // ✅ Set user in context

@@ -3,7 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom"; // 🔁
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API_URL = import.meta.env.VITE_API_URL || "https://bookstore-backend-tcp8.onrender.com";
 
 const AddBook = () => {
   const navigate = useNavigate(); // 🔁

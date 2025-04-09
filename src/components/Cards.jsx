@@ -10,7 +10,7 @@ function Cards({ Item, onDelete }) {
     try {
       setDeleting(true);
       
-      await axios.delete(`http://localhost:8000/books/${Item._id}`);
+      await axios.delete(`https://bookstore-backend-tcp8.onrender.com/books/${Item._id}`);
       toast.success("Book deleted successfully!");
       onDelete(Item._id); // Update UI
     } catch (error) {
