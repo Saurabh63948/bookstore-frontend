@@ -31,10 +31,15 @@ function Cards({ Item, onDelete }) {
 
   return (
     <div className="mt-4 my-3 p-3">
-      <div className="card bg-base-100 w-94 shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:text-white dark:border">
-        <figure>
-          <img src={Item.image} alt={Item.name} />
-        </figure>
+      <div className="card bg-base-100 w-94 shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:text-white dark:border ">
+      <figure className="w-full h-[450px] overflow-hidden">
+  <img
+    src={Item.image}
+    alt={Item.name}
+    className="max-w-full h-[450px] object-cover"
+  />
+</figure>
+
         <div className="card-body">
           <h2 className="card-title cursor-pointer" onClick={handleTitleClick}>
             {Item.name}
