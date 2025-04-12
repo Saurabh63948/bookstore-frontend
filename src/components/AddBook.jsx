@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom"; // 🔁
+import { useNavigate } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_API_URL || "https://bookstore-backend-tcp8.onrender.com";
 
 const AddBook = () => {
-  const navigate = useNavigate(); // 🔁
+  const navigate = useNavigate();
 
   const {
     register,
@@ -43,8 +43,8 @@ const AddBook = () => {
         toast.success("📚 Book added successfully!");
         reset();
         setTimeout(() => {
-          navigate("/"); // ✅ Redirect to home after success
-        }, 1000); // optional delay for user to see success message
+          navigate("/");
+        }, 1000);
       }
     } catch (error) {
       console.error(error);
@@ -53,21 +53,21 @@ const AddBook = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-md p-6 bg-white shadow-lg rounded-lg space-y-4"
+        className="w-full max-w-md p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg space-y-4 mt-16"
       >
-        <h2 className="text-2xl font-bold text-center mb-4">Add New Book</h2>
+        <h2 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">Add New Book</h2>
 
         {/* Book Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold">Book Name</label>
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-800 dark:text-gray-200">Book Name</label>
           <input
             id="name"
             type="text"
             placeholder="Enter Book Name"
-            className="w-full mt-2 p-2 border rounded"
+            className="w-full mt-2 p-2 border rounded bg-white text-black dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
             {...register("name", { required: "Book name is required" })}
           />
           {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
@@ -75,12 +75,12 @@ const AddBook = () => {
 
         {/* Book Title */}
         <div>
-          <label htmlFor="title" className="block text-sm font-semibold">Book Title</label>
+          <label htmlFor="title" className="block text-sm font-semibold text-gray-800 dark:text-gray-200">Book Title</label>
           <input
             id="title"
             type="text"
             placeholder="Enter Book Title"
-            className="w-full mt-2 p-2 border rounded"
+            className="w-full mt-2 p-2 border rounded bg-white text-black dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
             {...register("title", { required: "Book title is required" })}
           />
           {errors.title && <span className="text-red-500 text-sm">{errors.title.message}</span>}
@@ -88,12 +88,12 @@ const AddBook = () => {
 
         {/* Price */}
         <div>
-          <label htmlFor="price" className="block text-sm font-semibold">Price</label>
+          <label htmlFor="price" className="block text-sm font-semibold text-gray-800 dark:text-gray-200">Price</label>
           <input
             id="price"
             type="number"
             placeholder="Enter Price"
-            className="w-full mt-2 p-2 border rounded"
+            className="w-full mt-2 p-2 border rounded bg-white text-black dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
             {...register("price", {
               required: "Price is required",
               valueAsNumber: true,
@@ -105,12 +105,12 @@ const AddBook = () => {
 
         {/* Category */}
         <div>
-          <label htmlFor="category" className="block text-sm font-semibold">Category</label>
+          <label htmlFor="category" className="block text-sm font-semibold text-gray-800 dark:text-gray-200">Category</label>
           <input
             id="category"
             type="text"
             placeholder="Enter Category"
-            className="w-full mt-2 p-2 border rounded"
+            className="w-full mt-2 p-2 border rounded bg-white text-black dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
             {...register("category", { required: "Category is required" })}
           />
           {errors.category && <span className="text-red-500 text-sm">{errors.category.message}</span>}
@@ -118,12 +118,12 @@ const AddBook = () => {
 
         {/* Image URL */}
         <div>
-          <label htmlFor="image" className="block text-sm font-semibold">Image URL</label>
+          <label htmlFor="image" className="block text-sm font-semibold text-gray-800 dark:text-gray-200">Image URL</label>
           <input
             id="image"
             type="text"
             placeholder="Enter Image URL"
-            className="w-full mt-2 p-2 border rounded"
+            className="w-full mt-2 p-2 border rounded bg-white text-black dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
             {...register("image", {
               required: "Image URL is required",
               pattern: {
@@ -137,12 +137,12 @@ const AddBook = () => {
 
         {/* PDF URL */}
         <div>
-          <label htmlFor="pdf" className="block text-sm font-semibold">PDF URL</label>
+          <label htmlFor="pdf" className="block text-sm font-semibold text-gray-800 dark:text-gray-200">PDF URL</label>
           <input
             id="pdf"
             type="text"
             placeholder="Enter PDF URL"
-            className="w-full mt-2 p-2 border rounded"
+            className="w-full mt-2 p-2 border rounded bg-white text-black dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
             {...register("pdf", {
               required: "PDF URL is required",
               pattern: {

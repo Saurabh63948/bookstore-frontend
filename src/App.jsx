@@ -2,9 +2,10 @@ import Home from "./components/Home/Home";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Courses from "./Courses/Courses";
 import SignUp from "./components/SignUp";
-import AddBook from "./components/AddBook";
+
 import { Toaster } from "react-hot-toast";
 import { useAuth } from "./store/AuthProvider";
+import AddBooks from "./AddBooks/AddBooks";
 
 // ✅ Import your new pages when needed
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route
           path="/add-book"
-          element={isHost ? <AddBook /> : <Navigate to="/" />}
+          element={isHost ? <AddBooks /> : <Navigate to="/" />}
         />
 
         {/* ✅ Add more routes as needed */}
